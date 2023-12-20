@@ -1,16 +1,12 @@
 {
     "version": 2,
-  "builds": [
-    {
-      "src": "/*",
-      "use": "@vercel/node",
-      "config": { "zeroConfig": true }
-    }
-  ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/dist/$1" },
-      { "handle": "filesystem" },
-      { "src": ".*", "dest": "/dist/index.html" }
+    "builds": [
+        {
+            "src": "/*",
+            "use": "@vercel/node",
+            "config": {
+                "zeroConfig": true
+            }
+        }
     ]
-  }
-  
+}

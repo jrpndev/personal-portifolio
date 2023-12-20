@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "/*",
-      "use": "ng serve",
+      "use": "npm start",
       "config": { "zeroConfig": true }
     }
   ],

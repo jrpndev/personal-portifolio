@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "/*",
-      "use": "npm start",
+      "use": "@vercel/node",
       "config": { "zeroConfig": true }
     }
   ],

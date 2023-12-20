@@ -1,8 +1,12 @@
 {
     "version": 2,
-    "builds": [
-      { "src": "./", "use": "ng serve" }
-    ],
+  "builds": [
+    {
+      "src": "/*",
+      "use": "ng serve",
+      "config": { "zeroConfig": true }
+    }
+  ],
     "routes": [
       { "src": "/(.*)", "dest": "/dist/$1" },
       { "handle": "filesystem" },

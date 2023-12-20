@@ -1,12 +1,9 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "/*",
-            "use": "@vercel/node",
-            "config": {
-                "zeroConfig": true
-            }
-        }
+      {
+        "src": "package.json", 
+        "use": "vercel-sapper"
+      }
     ]
-}
+  }

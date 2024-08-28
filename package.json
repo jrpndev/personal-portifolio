@@ -22,6 +22,8 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "autoprefixer": "^10.4.14",
     "ng-recaptcha": "^10.0.0",
     "postcss": "^8.4.24",

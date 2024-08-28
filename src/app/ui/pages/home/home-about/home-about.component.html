@@ -4,7 +4,7 @@
 
             <div [@transitionText]="{value:_mTriggerAnim, params:{animDelay:100}}" fxLayout="row"
                 fxLayoutAlign="start end">
-                <h4 class="title current-typo--h4 tb-flex--shrink-0">About Me.</h4>
+                <h4 class="title current-typo--h4 tb-flex--shrink-0">{{ translations[language].aboutMe }}</h4>
                 <div class="tb-width--12"></div>
                 <div fxFlex="60" class="line tb-color-bg--black"></div>
                 <div fxFlex class=""></div>
@@ -12,44 +12,33 @@
 
             <div ngClass.gt-xs="tb-height--20" ngClass.xs="tb-height--12"></div>
 
-
             <div fxLayout="row" fxLayout.xs="column">
                 <div [fxFlexOrder]='1' [fxFlexOrder.xs]="2" fxFlex fxFlex.xs="none" fxFlex.sm="70" fxLayout="column">
                     <div ngClass.gt-xs="tb-height--64" ngClass.xs="tb-height--20"></div>
 
                     <p [@transitionText]="{value:_mTriggerAnim, params:{animDelay:200}}"
-                        class="current-typo--body1-medium tb-color--black-54">In 2020, I successfully completed a
-                        technical course in informatics at IFAM, where I actively participated in projects focusing on
-                        clean architecture, clean code, and Test-Driven Development (TDD). This experience sparked my
-                        interest in software development. Subsequently, I delved into the realm of <span
-                            class="tb-color--black">Web Apps</span>,
-                        <span class="tb-color--black">Mobile Apps</span>, and well-structured backend system
-                        development. Emphasizing the importance of design
-                        patterns and project design, I've been dedicated to crafting robust and efficient solutions ever
-                        since.
+                        class="current-typo--body1-medium tb-color--black-54">
+                        {{ translations[language].paragraph1 }}
                     </p>
                     <div ngClass.gt-sm="tb-height--12" ngClass.sm="tb-height--8" ngClass.xs="tb-height--6"></div>
 
                     <p [@transitionText]="{value:_mTriggerAnim, params:{animDelay:200}}"
-                        class="current-typo--body1-medium tb-color--black-54">My objective is to make development as
-                        easy as possible with simple and beautiful designs and organised code
-                        patterns.</p>
+                        class="current-typo--body1-medium tb-color--black-54">
+                        {{ translations[language].paragraph2 }}
+                    </p>
 
                     <div ngClass.gt-sm="tb-height--56" ngClass.sm="tb-height--46" ngClass.xs="tb-height--32"></div>
 
                     <div [@transitionText]="{value:_mTriggerAnim, params:{animDelay:300}}" fxLayout="row">
                         <div fxFlex fxLayout="column" fxLayoutGap="12" fxLayoutAlign="start start">
-                            <h2 class="title current-typo--h3-light">04+</h2>
-                            <h4 class="title current-typo--h6">Years of Experience</h4>
-
+                            <h2 class="title current-typo--h3-light">05</h2>
+                            <h4 class="title current-typo--h6">{{ translations[language].yearsExperience }}</h4>
                         </div>
 
                         <div fxFlex fxLayout="column" fxLayoutGap="12" fxLayoutAlign="start start">
                             <h2 class="title current-typo--h3-light">02</h2>
-                            <h4 class="title current-typo--h6">Projects Completed</h4>
-
+                            <h4 class="title current-typo--h6">{{ translations[language].projectsCompleted }}</h4>
                         </div>
-
                     </div>
 
                     <div ngClass.gt-sm="tb-height--56" ngClass.sm="tb-height--46" ngClass.xs="tb-height--32"></div>
@@ -76,6 +65,7 @@
                             <h5 class="current-typo--h5 tb-color--white">Docker</h5>
                         </div>
                     </div>
+
                     <div class="tb-height--8"></div>
 
                     <div [@transitionText]="{value:_mTriggerAnim, params:{animDelay:500}}" fxLayout="row wrap"
@@ -97,51 +87,38 @@
                         </div>
                     </div>
 
-
-
-
                     <div ngClass.gt-sm="tb-height--56" ngClass.sm="tb-height--46" ngClass.xs="tb-height--32"></div>
 
                     <div [@transitionText]="{value:_mTriggerAnim, params:{animDelay:600}}" fxLayout="row"
                         fxLayoutAlign="start center" fxLayoutGap="32">
                         <a class="btn-area-cv"
-                            href="https://drive.google.com/file/d/16VNXQyNLXNo2o5lwAn12kb6kTRKMuWvR/view?usp=drive_link"
+                            [href]="translations[language].link"
                             target="_blank">
-                            <button mat-raised-button color="primary"><span class="current-typo--button-medium">Download
-                                    CV.</span></button>
-
+                            <button mat-raised-button color="primary">
+                                <span class="current-typo--button-medium">{{ translations[language].downloadCV }}</span>
+                            </button>
                         </a>
 
                         <!-- <div class="btn-area-hire">
-
                             <a mat-ripple class="unlink btn-hire tb-color-bg--white" fxLayout="row"
                                 fxLayoutAlign="center center"
                                 href="https://gitter.im/JunkieLabs/common?utm_source=share-link&utm_medium=link&utm_campaign=share-link/"
                                 target="_blank">
-
-                                <p class="current-typo--button-medium tb-font-weight--medium tb-color--black">Hire me
-                                </p>
+                                <p class="current-typo--button-medium tb-font-weight--medium tb-color--black">Hire me</p>
                             </a>
-
                         </div> -->
-
                     </div>
-
                 </div>
-                <div fxFlex.xs="none" fxFlex [fxFlexOrder.xs]="1" [fxFlexOrder]=' 2' class="image-container"
+
+                <div fxFlex.xs="none" fxFlex [fxFlexOrder.xs]="1" [fxFlexOrder]='2' class="image-container"
                     fxLayout="column" fxLayoutAlign="center stretch">
                     <div [@transitionImageScale]="{value:_mTriggerAnim, params: {animDelay: 800}}"
                         class="tb-text--align-center image-area" #imageAreaView>
                         <img class="image tb-position--relative" src="assets/img/avatar/profile.png"
                             style="border-radius: 100%;" />
                     </div>
-
                 </div>
-
             </div>
-
-
-
         </div>
     </div>
 </div>

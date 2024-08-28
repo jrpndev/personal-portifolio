@@ -1,6 +1,7 @@
 import { ScrollDispatcher, ViewportRuler } from '@angular/cdk/scrolling';
 import { ChangeDetectorRef, Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { ActivatedRoute } from '@angular/router'; // Importar ActivatedRoute
 import { takeUntil, startWith, map, scan, distinctUntilChanged, takeWhile, switchMap, Observable, ReplaySubject } from 'rxjs';
 import { ENTER_SCALE, TRANSITION_AREA_SLIDE, TRANSITION_IMAGE_SCALE, TRANSITION_TEXT } from 'src/app/ui/animations/transitions/transitions.constants';
 import { UiUtilsView } from 'src/app/ui/utils/views.utils';
@@ -18,42 +19,66 @@ import { UiUtilsView } from 'src/app/ui/utils/views.utils';
 })
 export class HomeAboutComponent implements OnInit {
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
-  mOnceAnimated = false
- 
-  /* ********************************************************************************************
-  *                anims
-  */
-  _mTriggerAnim?= 'false'
-
-  _mTriggerImage?= 'false'
-
-
-  _mThreshold = 0.2
-
+  mOnceAnimated = false;
+  
+  _mTriggerAnim?= 'false';
+  _mTriggerImage?= 'false';
+  _mThreshold = 0.2;
   
   @ViewChild('animRefView') vAnimRefView?: ElementRef<HTMLElement>;
   
-  constructor(public el: ElementRef,
+  language: string = 'en'; // Idioma padrão
+  translations: any; // Armazena as traduções
+
+  constructor(
+    public el: ElementRef,
     private _ngZone: NgZone,
     private cdr: ChangeDetectorRef,
     public mediaObserver: MediaObserver,
-    private scroll: ScrollDispatcher, private viewPortRuler: ViewportRuler) { }
+    private scroll: ScrollDispatcher, 
+    private viewPortRuler: ViewportRuler,
+    private route: ActivatedRoute // Injeta o ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    // Inicializa as traduções
+    this.route.queryParams.subscribe(params => {
+      this.language = params['lang'] || 'en';
+      this.setTranslations();
+    });
   }
 
-  
+  setTranslations() {
+    this.translations = {
+      en: {
+        aboutMe: "About Me.",
+        paragraph1: "In 2020, I successfully completed a technical course in informatics at IFAM, where I actively participated in projects focusing on clean architecture, clean code, and Test-Driven Development (TDD). This experience sparked my interest in software development. Subsequently, I delved into the realm of Web Apps, Mobile Apps, and well-structured backend system development. Emphasizing the importance of design patterns and project design, I've been dedicated to crafting robust and efficient solutions ever since.",
+        paragraph2: "My objective is to make development as easy as possible with simple and beautiful designs and organised code patterns.",
+        yearsExperience: "Years of Experience",
+        projectsCompleted: "Projects Completed",
+        downloadCV: "Download CV.",
+        link : "https://drive.google.com/file/d/1e0P1fYkvYwfxJYPPGErP_TBmGq9d-DZ4/view?usp=sharing",
+      },
+      pt: {
+        aboutMe: "Sobre Mim.",
+        paragraph1: "Em 2020, concluí com êxito um curso técnico em informática no IFAM, onde participei ativamente de projetos com foco em arquitetura limpa, código limpo e Desenvolvimento Orientado a Testes (TDD). Essa experiência despertou meu interesse pelo desenvolvimento de software. Posteriormente, mergulhei no desenvolvimento de Aplicativos Web, Aplicativos Móveis e sistemas backend bem estruturados. Enfatizando a importância dos padrões de design e do projeto de sistemas, tenho me dedicado a criar soluções robustas e eficientes desde então.",
+        paragraph2: "Meu objetivo é tornar o desenvolvimento o mais fácil possível com designs simples e bonitos e padrões de código organizados.",
+        yearsExperience: "Anos de Experiência",
+        projectsCompleted: "Projetos Concluídos",
+        downloadCV: "Baixar CV.",
+        link : 'https://drive.google.com/file/d/1KWUHi6wpOsL7p7ANqGoHjpKTyHTovnu6/view?usp=sharing'
+      }
+    };
+  }
 
   ngAfterViewInit(): void {
     this.setupAnimation();
   }
 
   ngOnDestroy(): void {
-    
-    this.destroyed$.next(true)
-    this.destroyed$.complete()
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
-
 
   public setupAnimation() {
     if (!this.vAnimRefView) return;

@@ -11,22 +11,19 @@
     <div class="tb-container tb-position--relative container">
         <div fxLayout="column" fxLayoutAlign="start stretch">
             <h2 [@transitionText]="{value:_mTriggerAnim, params:{animDelay:100}}" ngClass.gt-sm="current-typo--h3-light"
-                ngClass.sm="current-typo--h3-light" ngClass.xs="current-typo--h4">My Platforms.</h2>
+                ngClass.sm="current-typo--h3-light" ngClass.xs="current-typo--h4">{{ translations[language].platformsTitle }}</h2>
 
             <div ngClass.gt-xs="tb-height--56" ngClass.xs="tb-height--20"></div>
-
 
             <!-- card junkielabs -->
             <a [@transitionText]="{value:_mTriggerAnim, params:{animDelay:200}}"
                 class="junkie-section tb-position--relative card tb-color-bg--black-4 unlink"
                 href="https://azure.microsoft.com/pt-br/products/devops" target="_blank">
 
-
-                <div class="ribbon ribbon-top-right"><span class="current-typo--h5">Open Source</span></div>
+                <div class="ribbon ribbon-top-right"><span class="current-typo--h5">{{ translations[language].openSource }}</span></div>
 
                 <div class="card-content tb-position--relative" fxLayout="row" fxLayout.xs="column"
                     fxLayoutAlign="start center">
-
 
                     <div fxFlex="50" class="tb-position--relative" ngClass.gt-xs="tb-padding--right-16"
                         ngClass.xs="tb-padding--bottom-24" fxLayout="column">
@@ -37,31 +34,17 @@
                         <div class="tb-height--12"></div>
 
                         <h3 class="tb-font-weight--medium tb-color--black" ngClass.xs="current-typo--h2-medium"
-                            ngClass.sm="current-typo--h3-medium " ngClass.gt-sm="current-typo--h2-medium">Azure Devops
+                            ngClass.sm="current-typo--h3-medium" ngClass.gt-sm="current-typo--h2-medium">{{ translations[language].azureDevopsTitle }}
                         </h3>
                         <div class="tb-height--12"></div>
-                        <p class="current-typo--body1 tb-color--black-75">An Open Source Initiative to manage software
-                            projects and development tools.</p>
+                        <p class="current-typo--body1 tb-color--black-75">{{ translations[language].azureDevopsDetail }}</p>
                         <div class="tb-height--20"></div>
                         <a fxFlexAlign="start" class="btn-junkielab-area"
                             href="https://azure.microsoft.com/pt-br/products/devops" target="_blank">
-                            <button mat-raised-button color="primary"><span class="current-typo--button-medium">Explore
-                                    Now.</span></button>
-
+                            <button mat-raised-button color="primary"><span class="current-typo--button-medium">{{ translations[language].exploreNow }}</span></button>
                         </a>
                         <div class="tb-height--12"></div>
-
-
                     </div>
-
-
-
-                    <!-- <div fxFlex fxFlex.xs="none" class="card-empty-space tb-width--76">
-
-
-                    </div> -->
-
-
 
                 </div>
 
@@ -81,16 +64,13 @@
                         <div class="tb-height--12"></div>
 
                         <h3 class="tb-font-weight--medium tb-color--black" ngClass.xs="current-typo--h2-medium"
-                            ngClass.sm="current-typo--h3-medium " ngClass.gt-sm="current-typo--h2-medium">Git
+                            ngClass.sm="current-typo--h3-medium" ngClass.gt-sm="current-typo--h2-medium">{{ translations[language].gitTitle }}
                         </h3>
                         <div class="tb-height--12"></div>
-                        <p class="current-typo--body1 tb-color--black-75">GitHub is a code hosting platform for version
-                            control and collaboration. It lets you and others work together on projects from anywhere.
-                        </p>
+                        <p class="current-typo--body1 tb-color--black-75">{{ translations[language].gitDetail }}</p>
                         <div class="tb-height--32"></div>
                         <a fxFlexAlign="start" class="btn-thedroid-area" href="https://github.com/" target="_blank">
-                            <button class="thedroid-button" mat-raised-button color="primary"><span
-                                    class="current-typo--button-medium">Explore Now.</span></button>
+                            <button class="thedroid-button" mat-raised-button color="primary"><span class="current-typo--button-medium">{{ translations[language].exploreNow }}</span></button>
                         </a>
                     </div>
 

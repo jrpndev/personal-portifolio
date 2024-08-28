@@ -2,6 +2,7 @@ import { ScrollDispatcher, ViewportRuler } from '@angular/cdk/scrolling';
 import { ChangeDetectorRef, Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ReplaySubject, takeUntil, startWith, map, scan, distinctUntilChanged, takeWhile, switchMap, Observable } from 'rxjs';
 import { TRANSITION_TEXT, TRANSITION_IMAGE_SCALE } from 'src/app/ui/animations/transitions/transitions.constants';
 import { UiUtilsView } from 'src/app/ui/utils/views.utils';
@@ -25,6 +26,8 @@ export class HomeShowcasesComponent implements OnInit {
 
   _mIcon2 = "assets/img/icons/icon_set_2.png"
 
+  
+
 
   /* ********************************************************************************************
     *                anims
@@ -42,6 +45,7 @@ export class HomeShowcasesComponent implements OnInit {
     private _ngZone: NgZone,
     private cdr: ChangeDetectorRef,
     public mediaObserver: MediaObserver,
+    private route : ActivatedRoute,
     private scroll: ScrollDispatcher, private viewPortRuler: ViewportRuler,
     private formBuilder: FormBuilder) {
       this.mediaObserver.asObservable().subscribe((mediaChange: MediaChange[]) => {
@@ -64,7 +68,23 @@ export class HomeShowcasesComponent implements OnInit {
 
   }
 
+  language = '';
+  // Translation object
+  translations :any= {
+    en: {
+      showcasesTitle: 'Showcases'
+    },
+    pt: {
+      showcasesTitle: 'Demonstrações'
+    }
+  };
+
+  // Current language, e.g., 'en' or 'pt'
+
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.language = params['lang'] || 'en'; 
+    });
   }
 
 

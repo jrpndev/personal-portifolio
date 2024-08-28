@@ -131,26 +131,7 @@ export class HomeContactComponent implements OnInit {
 
   addContact(data: ParamPostContact) {
     
-    this.apiContactService.add(data).subscribe({
-      next :  (res: ParamPostContact) => {
-          // console.log("contact res is: ", res);
-          // if (res) {
-          //   this.snackBar.open("Contact query successfully send!", null, {
-          //     duration: 4000
-          //   });
-          // }
-          this.resetForm();
-          this.closeProgress();
-          this.openSuccess();
-        },
-
-      error: (error) => {
-        console.error(error);
-        // this.snackBar.open(error.message, null, { duration: 4000 });
-        this.closeProgress();
-      },
-    }
-    );
+  
   }
 
 

@@ -14,22 +14,5 @@ import { ParamContactFlowRes, ParamPostContact } from '../params/contact-param';
 })
 export class ApiContactService {
 
-	constructor(
-		private apiService: ApiService,
-		@Inject(API_CONSTANTS) public apiConstants: ApiConstants
-	) { }
-
-
-
-	add(contact: ParamPostContact): Observable<ParamPostContact> {
-		// console.log(data);
-
-		const params = contact;
-
-		const urlPath = this.apiConstants.contact().contacts;
-		return this.apiService.post(urlPath, params);
-	}
-
-
 
 }

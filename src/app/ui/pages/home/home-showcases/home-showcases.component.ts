@@ -148,9 +148,9 @@ export class HomeShowcasesComponent implements OnInit {
 
     {
      "id": "5131",
-     "name": "PepPlus: For Academic Growth",
-     "image": "assets/img/clients/pepplus.png",
-     "link": "https://play.google.com/store/apps/details?id=com.pepstudy.pepplus",
+     "name": "iBook App",
+     "image": "assets/img/clients/ibook-app-icon.png",
+     "link": "https://play.google.com/store/apps/details?id=com.application.ibook",
      "tab": "Android",
      "color": "#FFFFFF"
    },

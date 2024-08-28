@@ -5,7 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
-
+.angular
 # Node
 /node_modules
 npm-debug.log
@@ -37,7 +37,6 @@ yarn-error.log
 testem.log
 /typings
 
-/src/**/environment.prod.ts
 # System files
 .DS_Store
 Thumbs.db

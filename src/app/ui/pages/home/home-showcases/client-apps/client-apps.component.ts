@@ -122,27 +122,27 @@ export class ClientAppsComponent implements OnInit {
 
     {
      "id": "5131",
-     "name": "PepPlus: For Academic Growth",
-     "image": "assets/img/clients/pepplus.png",
-     "link": "https://play.google.com/store/apps/details?id=com.pepstudy.pepplus",
+     "name": "iBook App",
+     "image": "assets/img/clients/ibook-app-icon.png",
+     "link": "https://play.google.com/store/apps/details?id=com.application.ibook",
      "tab": "Android",
      "color": "#FFFFFF"
    },
-
-
    {
-     "id": "5132",
-     "name": "WhichOne Shop: Amazon Flipkart",
-     "image": "assets/img/clients/whichone.png",
-     "link": "https://play.google.com/store/apps/details?id=com.whichone",
-     "tab": "Flutter"
-   },
-   {
-     "id": "5133",
-     "name": "Aabboo - Anonymous Chat Rooms",
-     "image": "assets/img/clients/aabboo.png",
-     "link": "https://play.google.com/store/apps/details?id=com.aabboo.social",
-     "tab": "Android"
-   }
+    "id": "5132",
+    "name": "iBook Website",
+    "image": "assets/img/clients/ibook-page.png",
+    "link": "https://ibook-orcin.vercel.app/login",
+    "tab": "Angular",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": "5132",
+    "name": "Sneakers Store",
+    "image": "assets/img/clients/product-next-app.png",
+    "link": "https://github.com/jrpndev/product-listing",
+    "tab": "Next",
+    "color": "#FFFFFF"
+  },
   ];
 }

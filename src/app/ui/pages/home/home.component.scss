@@ -1,12 +1,18 @@
-// Hero Section
+$primary: #667eea;
+$secondary: #764ba2;
+$bg-light: #f8f9fa;
+$text-dark: #333;
+$text-mid: #555;
+$text-light: #666;
+
 .hero-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  padding-top: 120px; // Account for fixed header
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-top: 120px;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
   color: white;
   text-align: center;
 }
@@ -42,8 +48,7 @@
   margin-bottom: 2.5rem;
   opacity: 0.9;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 2.5rem;
 }
 
 .hero-buttons {
@@ -53,10 +58,9 @@
   flex-wrap: wrap;
 }
 
-// Stats Section
 .stats-section {
   padding: 4rem 2rem;
-  background: #f8f9fa;
+  background: $bg-light;
 }
 
 .stats-container {
@@ -78,22 +82,34 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 700;
-  color: #667eea;
+  color: $primary;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: #666;
+  color: $text-light;
   font-weight: 500;
 }
 
-// Projects Section
-.projects-section {
-  padding: 6rem 2rem;
-  padding-top: 8rem;
-  background: white;
+.projects-section,
+.experience-section,
+.infrastructure-section,
+.about-section,
+.contact-section {
+  padding: 8rem 2rem 6rem;
   scroll-margin-top: 80px;
+}
+
+.projects-section,
+.infrastructure-section,
+.contact-section {
+  background: white;
+}
+
+.experience-section,
+.about-section {
+  background: $bg-light;
 }
 
 .section-container {
@@ -106,7 +122,7 @@
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
-  color: #333;
+  color: $text-dark;
 }
 
 .projects-grid {
@@ -123,11 +139,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .project-header {
@@ -141,7 +156,7 @@
 .project-name {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
+  color: $text-dark;
   margin: 0;
   flex: 1;
 }
@@ -166,14 +181,14 @@
 
 .project-type {
   font-size: 0.9rem;
-  color: #666;
+  color: $text-light;
   margin-bottom: 1rem;
   font-weight: 500;
 }
 
 .project-description {
   font-size: 0.95rem;
-  color: #555;
+  color: $text-mid;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   flex: 1;
@@ -184,25 +199,16 @@
 }
 
 .project-link {
-  color: #667eea;
+  color: $primary;
   text-decoration: none;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   transition: color 0.3s ease;
-}
-
-.project-link:hover {
-  color: #764ba2;
-}
-
-// Experience Section
-.experience-section {
-  padding: 6rem 2rem;
-  padding-top: 8rem;
-  background: #f8f9fa;
-  scroll-margin-top: 80px;
+  &:hover {
+    color: $secondary;
+  }
 }
 
 .timeline {
@@ -210,16 +216,15 @@
   max-width: 900px;
   margin: 0 auto;
   padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #667eea;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $primary;
+  }
 }
 
 .timeline-item {
@@ -235,9 +240,9 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #667eea;
+  background: $primary;
   border: 3px solid white;
-  box-shadow: 0 0 0 3px #667eea;
+  box-shadow: 0 0 0 3px $primary;
 }
 
 .timeline-content {
@@ -257,13 +262,13 @@
 .experience-role {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #333;
+  color: $text-dark;
   margin: 0;
 }
 
 .experience-company {
   font-size: 1.1rem;
-  color: #667eea;
+  color: $primary;
   font-weight: 500;
 }
 
@@ -272,48 +277,35 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
-  color: #666;
+  color: $text-light;
 }
 
 .experience-period {
   font-weight: 500;
 }
 
-.experience-location {
-  &::before {
-    content: '•';
-    margin-right: 0.5rem;
-  }
+.experience-location::before {
+  content: '•';
+  margin-right: 0.5rem;
 }
 
 .experience-achievements {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.experience-achievements li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-  color: #555;
-  line-height: 1.6;
-}
-
-.experience-achievements li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #667eea;
-  font-weight: bold;
-}
-
-// Infrastructure Section
-.infrastructure-section {
-  padding: 6rem 2rem;
-  padding-top: 8rem;
-  background: white;
-  scroll-margin-top: 80px;
+  li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: $text-mid;
+    line-height: 1.6;
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: $primary;
+      font-weight: bold;
+    }
+  }
 }
 
 .infrastructure-grid {
@@ -326,24 +318,15 @@
 
 .infrastructure-item {
   padding: 1rem 1.5rem;
-  background: #f8f9fa;
+  background: $bg-light;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid $primary;
   font-size: 0.95rem;
-  color: #555;
+  color: $text-mid;
   transition: background 0.3s ease;
-}
-
-.infrastructure-item:hover {
-  background: #e9ecef;
-}
-
-// About Section
-.about-section {
-  padding: 6rem 2rem;
-  padding-top: 8rem;
-  background: #f8f9fa;
-  scroll-margin-top: 80px;
+  &:hover {
+    background: #e9ecef;
+  }
 }
 
 .about-text {
@@ -351,16 +334,8 @@
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #555;
+  color: $text-mid;
   text-align: center;
-}
-
-// Contact Section
-.contact-section {
-  padding: 6rem 2rem;
-  padding-top: 8rem;
-  background: white;
-  scroll-margin-top: 80px;
 }
 
 .contact-links {
@@ -375,21 +350,19 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  color: #667eea;
+  color: $primary;
   text-decoration: none;
-  border: 2px solid #667eea;
+  border: 2px solid $primary;
   border-radius: 8px;
   font-weight: 500;
   transition: all 0.3s ease;
+  &:hover {
+    background: $primary;
+    color: white;
+    transform: translateY(-2px);
+  }
 }
 
-.contact-link:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-2px);
-}
-
-// Animations
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -401,69 +374,23 @@
   }
 }
 
-// Responsive Design
 @media (max-width: 768px) {
-  .hero-name {
-    font-size: 2.5rem;
-  }
-
-  .hero-title {
-    font-size: 1.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline {
-    padding-left: 1.5rem;
-  }
-
-  .timeline-item {
-    padding-left: 2rem;
-  }
-
-  .timeline-marker {
-    left: -1.25rem;
-  }
-
-  .infrastructure-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .contact-link {
-    justify-content: center;
-  }
+  .hero-name { font-size: 2.5rem; }
+  .hero-title { font-size: 1.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .section-title { font-size: 2rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .timeline { padding-left: 1.5rem; }
+  .timeline-item { padding-left: 2rem; }
+  .timeline-marker { left: -1.25rem; }
+  .infrastructure-grid { grid-template-columns: 1fr; }
+  .contact-links { flex-direction: column; align-items: stretch; }
+  .contact-link { justify-content: center; }
 }
 
 @media (max-width: 480px) {
-  .hero-section {
-    padding: 1rem;
-  }
-
-  .hero-name {
-    font-size: 2rem;
-  }
-
-  .stats-container {
-    grid-template-columns: 1fr;
-  }
-
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .hero-section { padding: 1rem; }
+  .hero-name { font-size: 2rem; }
+  .stats-container { grid-template-columns: 1fr; }
+  .project-header { flex-direction: column; align-items: flex-start; }
 }

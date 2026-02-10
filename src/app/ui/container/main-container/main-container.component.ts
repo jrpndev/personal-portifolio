@@ -86,10 +86,24 @@ export class MainContainerComponent implements OnInit {
       // });
     }
   
-    _onToolbarAnimationEnd($event: any){
-  
+  _onToolbarAnimationEnd($event: any){
+
       // console.info("_onToolbarAnimationEnd: ", $event)
-  
+
     }
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    const scroller = this.vContentScroller?.nativeElement;
+    if (element && scroller) {
+      const elementTop = element.offsetTop;
+      scroller.scrollTo({
+        top: elementTop - 80, // Offset for header
+        behavior: 'smooth'
+      });
+    } else if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
 }

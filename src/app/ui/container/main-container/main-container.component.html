@@ -17,26 +17,21 @@
         </mat-toolbar-row>
 
         <mat-toolbar-row fxFlex fxHide.lt-md fxLayoutAlign="center center">
-            <!-- <a matRipple
+            <a matRipple
                 class="tb-a--unset tb-flex--justify-center tb-typo--h5 tb-font-weight--medium tb-color--grey-500 tb-padding--8-36-i tb-cursor--pointer"
-                ngClass.xs="tb-padding--h-16-i">
+                ngClass.xs="tb-padding--h-16-i" (click)="scrollToSection('projects')">
+                Projects
+            </a>
+            <a matRipple
+                class="tb-a--unset tb-flex--justify-center tb-typo--h5 tb-font-weight--medium tb-color--grey-500 tb-padding--8-36-i tb-cursor--pointer"
+                ngClass.xs="tb-padding--h-16-i" (click)="scrollToSection('experience')">
+                Experience
+            </a>
+            <a matRipple
+                class="tb-a--unset tb-flex--justify-center tb-typo--h5 tb-font-weight--medium tb-color--grey-500 tb-padding--8-36-i tb-cursor--pointer"
+                ngClass.xs="tb-padding--h-16-i" (click)="scrollToSection('contact')">
                 Contact
-            </a> -->
-            <!-- <a matRipple
-                class="tb-a--unset tb-flex--justify-center tb-typo--h5 tb-font-weight--medium tb-color--grey-500 tb-padding--8-36-i tb-cursor--pointer"
-                ngClass.xs="tb-padding--h-16-i" (click)="_scrollToElement(1)">
-                Blog
             </a>
-            <a matRipple
-                class="tb-a--unset tb-flex--justify-center tb-typo--h5 tb-font-weight--medium tb-color--grey-500 tb-padding--8-36-i tb-cursor--pointer"
-                ngClass.xs="tb-padding--h-16-i" (click)="_scrollToElement(2)">
-                Shop
-            </a>
-            <a matRipple
-                class="tb-a--unset tb-flex--justify-center tb-typo--h5 tb-font-weight--medium tb-color--grey-500 tb-padding--8-36-i tb-cursor--pointer"
-                ngClass.xs="tb-padding--h-16-i" (click)="_scrollToElement(3)">
-                Contact us
-            </a> -->
         </mat-toolbar-row>
 
         <mat-toolbar-row fxLayoutAlign="end center">

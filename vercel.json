@@ -1,8 +1,12 @@
 {
+    "buildCommand": "npm run build:prod",
+    "outputDirectory": "dist",
+    "framework": null,
+    "nodeVersion": "24.x",
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/api"
+            "destination": "/index.html"
         }
     ]
 }
